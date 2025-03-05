@@ -1,7 +1,8 @@
 let nomesDosAmigos= [];
+let nomesDosAmigosSorteados= [];
 
 function adicionarAmigo() {
-    var nomesFornecidos = document.querySelector('input').value
+    let nomesFornecidos = document.querySelector('input').value
     if(nomesFornecidos !== "") {
         nomesDosAmigos.push(nomesFornecidos);
         exibirTextoNaTela('p', '');
@@ -20,7 +21,7 @@ function limparCampo() {
 function validarEntrada() {
     let campo = document.querySelector('input').value;
     if(campo === "") {
-        alert('O campo não pode estar vazio!');
+        exibirTextoNaTela('p', '<span style="color: red">O campo não pode estar vazio!</span>');
         return false;
     } else {
         return true;
@@ -58,8 +59,16 @@ function atualizarListaDeAmigos() {
 
 }
 
-function sortearAmigo() {
+function sortearAmigo(){
     if (nomesDosAmigos.length < 3) {
         exibirTextoNaTela('p', '<span style="color: red">Não há amigos suficientes para serem sorteados!</span>');
-    } 
+    } else{
+            let indiceAleatorio = Math.floor(Math.random() * nomesDosAmigos.length);
+            let amigoSorteado = nomesDosAmigos[indiceAleatorio];
+            document.getElementById("resultado").innerHTML = `Seu amigo sorteado é: ${amigoSorteado}!`;
+
+        if (nomesDosAmigosSorteados.includes(nomesDosAmigos)) {
+            sortearAmigo();
+        }
+    }
 }
