@@ -4,6 +4,7 @@ function adicionarAmigo() {
     var nomesFornecidos = document.querySelector('input').value
     if(nomesFornecidos !== "") {
         nomesDosAmigos.push(nomesFornecidos);
+        exibirTextoNaTela('p', '');
     } else{
         validarEntrada();
     }
@@ -13,8 +14,7 @@ function adicionarAmigo() {
 }
 
 function limparCampo() {
-    nomesFornecidos = document.querySelector('input');
-    nomesFornecidos.value = '';
+    nomesFornecidos = document.querySelector('input').value= '';
 }
 
 function validarEntrada() {
@@ -59,5 +59,7 @@ function atualizarListaDeAmigos() {
 }
 
 function sortearAmigo() {
-    
+    if (nomesDosAmigos.length < 3) {
+        exibirTextoNaTela('p', '<span style="color: red">Não há amigos suficientes para serem sorteados!</span>');
+    } 
 }
