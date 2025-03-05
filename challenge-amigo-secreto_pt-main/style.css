@@ -90,6 +90,9 @@ body {
 .button-container {
     width: 300px;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 /* Estilos de entrada de texto */
@@ -128,9 +131,9 @@ button {
 /* Listas */
 ul {
     list-style-type: none;
-    color: var(--color-text);
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
+    color: #e73a00;
+    font-family: "Merriweather", serif;
+    font-size: 22px;
     margin: 20px 0;
     text-align: center;
 }
