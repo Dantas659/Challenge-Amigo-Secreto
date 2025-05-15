@@ -1,4 +1,4 @@
-🎁 Challeng-Amigo-Secreto
+#🎁 Challeng-Amigo-Secreto
 Projeto desenvolvido como exercício prático de lógica de programação, no âmbito do programa Talento do Futuro - TI, em parceria com a Oracle.
 
 📚 Descrição
